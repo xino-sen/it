@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates | SMIT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .news-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .news-card:hover { transform: translateY(-8px); }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-anim { animation: float 4s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-900">
+
+    <nav class="glass-nav sticky top-0 z-[100] w-full">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl overflow-hidden shadow-sm border border-slate-200">
+                    <img src="smitt.jpg" alt="SMIT Logo" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="block font-extrabold text-lg text-slate-900 uppercase">Southern Mindanao</span>
+                    <p class="text-[9px] font-bold text-indigo-600 uppercase tracking-widest">Institute of Technology Inc.</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+                <a href="news.html" class="text-indigo-600 transition-colors border-b-2 border-indigo-600">News</a>
+                <a href="about.html" class="hover:text-indigo-600 transition-colors">About</a>
+                <a href="register.html" class="bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-indigo-600 transition-all shadow-md">
+                   Register
+                </a>
+            </div>
+            <button onclick="toggleMenu()" class="md:hidden text-2xl p-2">
+                <i id="menu-icon" class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-slate-950 z-[110] hidden flex-col p-8 transition-all duration-300 translate-x-full">
+        <div class="flex justify-end"><button onclick="toggleMenu()" class="text-white text-3xl">&times;</button></div>
+        <div class="flex flex-col gap-8 mt-12 text-center">
+            <a href="index.html" class="text-white text-2xl font-bold">Home</a>
+            <a href="news.html" class="text-white text-2xl font-bold border-b-2 border-indigo-600">News</a>
+            <a href="about.html" class="text-white text-2xl font-bold">About</a>
+            <hr class="border-slate-800">
+            <button class="bg-indigo-600 text-white py-4 rounded-xl font-bold">Register</button>
+        </div>
+    </div>
+
+    <header class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200 pb-12">
+            <div>
+                <span class="text-indigo-600 font-bold uppercase tracking-[0.2em] text-xs">IT Department</span>
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-slate-900 mt-4 italic">Latest Updates.</h1>
+            </div>
+            <div class="flex gap-4">
+                <button class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-bold hover:bg-slate-50 transition">Events</button>
+                <button class="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-bold hover:bg-slate-50 transition">Academic</button>
+                <button class="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-bold shadow-lg shadow-indigo-200">View All</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 lg:px-8 pb-24">
+        <div class="news-card bg-white rounded-[2.5rem] border border-slate-100 overflow-hidden shadow-sm mb-12 flex flex-col lg:flex-row">
+            <div class="lg:w-1/2 h-80 lg:h-auto">
+                <img src="2.jpg" class="w-full h-full object-cover" alt="Event">
+            </div>
+            <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-indigo-50 text-indigo-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase">Featured</span>
+                    <span class="text-slate-400 text-xs">July 7, 2025</span>
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6 leading-tight">Code. Innovate. Dominate</h2>
+                <p class="text-slate-500 mb-8 leading-relaxed">BSIT students, AY 2025-2026, get ready to level up your skills and make your mark in the tech world! May your passion for IT continue to soar!.</p>
+                <a href="#" class="text-indigo-600 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                    See more <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="news-card bg-white p-4 rounded-[2rem] border border-slate-100 shadow-sm">
+                <img src="1.jpg" class="w-full h-48 object-cover rounded-[1.5rem] mb-6" alt="Students">
+                <div class="px-4 pb-4">
+                    <p class="text-indigo-600 font-bold text-[10px] uppercase mb-2">Capstone Project Defended</p>
+                    <h3 class="text-xl font-bold mb-4">the 4th-Year Students on the successful submission of your capstone hardbound to SMIT Computer Studies Department</h3>
+                    <p class="text-slate-500 text-sm mb-6">Your hard work, resilience, and commitment demonstrate that you are well-prepared to excel in the professional world.</p>
+                    <span class="text-slate-400 text-[10px] font-bold uppercase">Together in the frame Mr. Jess Tony Subaldo Aprostathe Program Head. </span>
+                </div>
+            </div>
+
+            <div class="news-card bg-white p-4 rounded-[2rem] border border-slate-100 shadow-sm">
+                <img src="4.jpg" class="w-full h-48 object-cover rounded-[1.5rem] mb-6" alt="Lab">
+                <div class="px-4 pb-4">
+                    <p class="text-indigo-600 font-bold text-[10px] uppercase mb-2">Get ready, SMITians!</p>
+                    <h3 class="text-xl font-bold mb-4">July 7, 2025, marks the beginning of the School Year 2025-2026. </h3>
+                    <p class="text-slate-500 text-sm mb-6">Mark your calendars and set your alarms, join us for General Orientation and Opening of Classes.</p>
+                    <span class="text-slate-400 text-[10px] font-bold uppercase">3 min read</span>
+                </div>
+            </div>
+
+            <div class="news-card bg-slate-950 p-8 rounded-[2rem] text-white flex flex-col justify-between">
+                <div>
+                    <div class="mb-4 aspect-video flex items-center justify-center bg-white/5 rounded-xl border border-white/10 p-2 overflow-hidden">
+                        <img src="bsit.jpg" alt="Logo" class="max-w-[120px] max-h-[80px] w-auto h-auto object-contain"> 
+                    </div>
+                        <h3 class="text-2xl font-bold mb-4">BSIT</h3>
+                        <p class="text-slate-400 text-sm mb-6">Get the latest campus news and tech trends delivered to your inbox weekly.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <input type="email" placeholder="Email Address" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500">
+                        <button class="w-full bg-indigo-600 py-3 rounded-xl font-bold hover:bg-indigo-700 transition">Join Now</button>
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-100 py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-slate-400 text-xs">© 2026 Southern Mindanao Institute of Technology | Newsroom</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                setTimeout(() => menu.classList.remove('translate-x-full'), 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('translate-x-full');
+                setTimeout(() => menu.classList.add('hidden'), 300);
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+
+</body>
+</html>
